@@ -6,7 +6,6 @@ Technology:
 
 - [Vue 3](https://vuejs.org/)
 - [Typescript](https://www.typescriptlang.org/)
-- [TailwindCSS](https://tailwindcss.com/)
 - [Jest](https://jestjs.io/ru/)
 
 ---

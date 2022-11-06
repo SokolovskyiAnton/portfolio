@@ -1,0 +1,69 @@
+@require 'fonts'
+@require 'colors'
+@require 'variables'
+
+
+// reset
+*
+  margin 0
+  padding 0
+  box-sizing border-box
+  min-height 0
+  min-width 0
+  font-family inherit
+
+// general
+li
+  list-style none
+
+a
+  text-decoration none
+
+button
+  border 0
+
+// layout
+html
+  background var(--bg)
+  font-family 'Roboto Mono', monospace
+  font-size 100%
+  hyphens auto
+  word-break normal
+  color var(--text-color-basic)
+
+.static-container
+  padding calc(50vh - 3.5rem) 0 0
+  margin 0 25vw
+  min-height 100vh
+  perspective 900px
+  perspective-origin 50% 50vh
+
+  @media screen and (max-width: 1024px)
+    margin 0 4rem 0 calc(4rem + 1px)
+
+
+  @media screen and (max-width: 568px)
+    margin: 0 2rem 0 calc(2rem + 1px)
+
+.container
+  width 100%
+  margin-right auto
+  margin-left auto
+
+  @media (min-width 568px)
+    max-width 100%
+
+  @media (min-width 1024px)
+    max-width 960px
+
+  @media (min-width 1216px)
+    max-width: 1152px
+
+  @media (min-width: 1408px)
+    max-width 1344px
+
+.wrapper
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  transition: opacity 0.5s linear
