@@ -63,7 +63,50 @@ html
     max-width 1344px
 
 .wrapper
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  transition: opacity 0.5s linear
+  position relative
+  z-index 1
+  min-height 100vh
+  transition opacity 0.5s linear
+
+  &:after
+    content ''
+    display block
+    position absolute
+    top 50vh
+    bottom 50vh
+    left calc(25vw - 2rem)
+    z-index 99
+    width 1px
+    height 50vh
+    opacity 0.3
+    background #682ae9
+
+    @media screen and (max-width: 1024px)
+      left 1rem
+
+// title
+
+.title
+  display block
+  color var(--text-color-light)
+  font-size 4rem
+  font-weight 700
+  word-spacing -0.1em
+  letter-spacing -0.05em
+  word-break break-word
+  hyphens auto
+  margin-right -25vw
+  padding-right 1rem
+
+  .func
+    color var(--text-color-purple)
+
+  @media screen and (max-width: 1024px)
+      margin-right -4rem
+      font-size 3rem
+
+  @media screen and (max-width: 568px)
+      margin-right -2rem
+      margin-bottom 1rem
+      font-size 2rem
+      line-height 1.1
