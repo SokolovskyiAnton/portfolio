@@ -48,21 +48,9 @@
 </template>
 
 <script setup lang="ts">
-import GithubIcon from "./Icons/GithubIcon.vue";
-import LinkedInIcon from "./Icons/LinkedinIcon.vue";
+import { useLinks } from "@/hooks/useLinks";
 
-const links = [
-  {
-    url: "https://www.linkedin.com/in/SokolovskyiAnton",
-    title: "LinkedIn",
-    icon: LinkedInIcon,
-  },
-  {
-    url: "https://github.com/SokolovskyiAnton",
-    title: "GitHub",
-    icon: GithubIcon,
-  },
-];
+const links = useLinks();
 
 function openMenu(): void {
   document.body.classList.add("is-nav-open");

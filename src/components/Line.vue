@@ -41,7 +41,7 @@ onBeforeUnmount(() => {
   width 1px
   height 50vh
   opacity 0.3
-  background #682ae9
+  background var(--text-color-purple)
 .circle
   position fixed
   top 48.9vh

@@ -1,7 +1,20 @@
 <template>
   <div class="wrapper" id="about">
-    <div class="static-container">
-      <h1>This is an about page</h1>
-    </div>
+    <Line />
+    <AboutSection />
   </div>
 </template>
+
+<script setup lang="ts">
+import Line from "@/components/Line";
+import AboutSection from "@/components/AboutSection.vue";
+</script>
+
+<style lang="stylus" scoped>
+#about
+  .static-container
+    padding-top 30vh
+
+    @media screen and (max-width 1024px)
+      padding-top 50vw
+</style>
