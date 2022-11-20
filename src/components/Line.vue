@@ -28,6 +28,7 @@ onMounted(() => {
 });
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", onScroll);
+  window.scrollTo(0, 0);
 });
 </script>
 

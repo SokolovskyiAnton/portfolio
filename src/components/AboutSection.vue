@@ -23,6 +23,66 @@
             </a>
           </li>
         </ul>
+        <p class="-purple">
+          Frontend engineer from Ukraine loving to build interfaces, writing
+          good code and learning new technologies.
+        </p>
+        <p class="-gray">// Frontend developer @ Ficus technologies</p>
+      </div>
+      <div class="about-grid">
+        <h2>Main skills</h2>
+        <div class="columns">
+          <ul class="about-list">
+            <li class="about-list__item" v-for="(skill, i) in skills" :key="i">
+              {{ skill.join(", ") }}<br />
+            </li>
+          </ul>
+        </div>
+
+        <h2>Experience</h2>
+        <div class="columns">
+          <ul class="about-list">
+            <li
+              class="about-list__item"
+              v-for="(experience, i) in experiences"
+              :key="i"
+            >
+              <strong class="-purple">{{ experience.position }}</strong>
+              <br />
+              @ {{ experience.company }}<br />
+              {{ experience.time || null }}
+            </li>
+          </ul>
+        </div>
+
+        <h2>Languages</h2>
+        <div class="columns">
+          <ul class="about-list">
+            <li
+              class="about-list__item"
+              v-for="(lang, level) in languages"
+              :key="level"
+            >
+              <span class="-comment">// {{ level }}</span
+              ><br />
+              <span v-for="[locale, label] in lang" :key="locale">
+                <em class="-purple">
+                  {{ locale }}
+                </em>
+                {{ label }}<br
+              /></span>
+            </li>
+          </ul>
+        </div>
+
+        <h2>Hobbies</h2>
+        <div class="columns">
+          <ul class="about-list">
+            <li class="about-list__item" v-for="(hobby, i) in hobbies" :key="i">
+              {{ hobby }}<br />
+            </li>
+          </ul>
+        </div>
       </div>
     </TextBlock>
   </div>
@@ -34,6 +94,49 @@ import CVIcon from "@/components/Icons/CVIcon.vue";
 import { useLinks } from "@/hooks/useLinks";
 
 const links = useLinks();
+const skills = [
+  ["Responsibility", "Strategic thinking", "Mentoring"],
+  ["Frontend", "Basic backend"],
+  [
+    "JavaScript",
+    "TypeScript",
+    "CSS",
+    "HTML",
+    "Canvas",
+    "Vue",
+    "React",
+    "Angular",
+    "Nuxt",
+    "MongoDB",
+    "Nest",
+    "Git",
+    "Docker",
+  ],
+  ["Figma", "Basic photoshop"],
+];
+const experiences = [
+  {
+    position: "Frontend Engineer",
+    company: "Ficus technologies",
+    time: "2021 - * current",
+  },
+  {
+    position: "Freelancer",
+    company: "Upwork",
+    time: "2018 - 2021",
+  },
+];
+const languages = {
+  fluent: [
+    ["ru-RU", "Russian"],
+    ["uk-UA", "Ukrainian"],
+  ],
+  intermediate: [
+    ["en-GB", "English"],
+    ["pl-PL", "Polish"],
+  ],
+};
+const hobbies = ["Chess", "Football", "Guitar", "History"];
 </script>
 
 <style lang="stylus" scoped>
@@ -82,4 +185,64 @@ const links = useLinks();
       &:hover
         .ico
           fill var(--text-color-light)
+.about-grid
+  padding 3rem 2rem 0 0
+  margin-right -25vw
+  width 75vw
+//
+  h2
+    font-size 1.2rem
+    margin-bottom 1rem
+
+  .columns
+    margin-bottom 2rem
+
+  .about-list
+    display grid
+    grid-template 1fr \/  repeat(4, 1fr)
+    grid-gap 2rem
+    grid-row-gap 1rem
+
+  .about-list__item
+    list-style none
+    margin 0
+    font-size 1rem
+    line-height 1.5em
+    color var(--text-color-gray)
+
+  .tools
+    display grid
+    grid-template 1fr \/ repeat(4, 1fr)
+    grid-gap 2rem
+    grid-row-gap 1rem
+
+    ul
+      display block
+
+  @media screen and (max-width 1024px)
+    padding 3rem 1rem 0 0
+    margin 0
+    width calc(100vw - 4rem)
+
+  @media screen and (max-width 768px)
+    ul
+      grid-template 1fr \/ repeat(3, 1fr)
+
+    .tools
+      grid-template 1fr \/ repeat(3, 1fr)
+
+      ul
+        display block
+
+  @media screen and (max-width 568px)
+    ul
+      grid-template 1fr \/ 1fr
+      grid-gap 1rem
+
+    .tools
+      grid-template 1fr \/ 1fr
+      grid-gap 1rem
+
+      ul
+        display block
 </style>
