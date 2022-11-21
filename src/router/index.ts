@@ -8,6 +8,7 @@ const routes: Array<RouteRecordRaw> = [
     component: Home,
     meta: {
       title: "sokolovskyi.is",
+      bodyClass: "home-page",
     },
   },
   {
@@ -16,6 +17,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/About.vue"),
     meta: {
       title: "sokolovskyi.about",
+      bodyClass: "about-page",
     },
   },
   {
@@ -24,6 +26,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/404.vue"),
     meta: {
       title: "sokolovskyi.err(404)",
+      bodyClass: "error-page",
     },
   },
 ];
@@ -34,6 +37,8 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  window.scroll(0, 0);
+  document.body.classList.remove("is-nav-open");
   document.title = to.meta.title as string;
   next();
 });

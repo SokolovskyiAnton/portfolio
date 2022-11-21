@@ -1,5 +1,6 @@
 <template>
   <header id="header">
+    <div class="header-bg" />
     <div class="header-container">
       <div class="header-breadcrumb">{{ $route.name }}</div>
 
@@ -96,7 +97,7 @@ function closeMenu(): void {
   background none
   border 0
 
-  @media screen and (max-width: 768px)
+  @media screen and (max-width 768px)
     display flex
     transition all 1s linear
 
@@ -132,14 +133,14 @@ function closeMenu(): void {
   &:hover
     color var(--header-link)
 
-  @media screen and (max-width: 768px)
+  @media screen and (max-width 768px)
     display flex
 
 .header-nav
   display flex
   align-items center
 
-  @media screen and (max-width: 768px)
+  @media screen and (max-width 768px)
     align-items flex-end
     justify-content flex-end
     position absolute
@@ -223,6 +224,20 @@ svg
     width 2rem
     height 2rem
     top 0
+
+// background
+.header-bg
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  z-index -1
+  background: linear-gradient(
+    to bottom,
+    var(--bg) 3rem,
+    rgba(14, 18, 18, 0) 100%
+  )
 
 
 @media screen and (max-width: 768px)

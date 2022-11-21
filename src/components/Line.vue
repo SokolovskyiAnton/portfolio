@@ -28,11 +28,10 @@ onMounted(() => {
 });
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", onScroll);
-  window.scrollTo(0, 0);
 });
 </script>
 
-<style scoped lang="stylus">
+<style lang="stylus">
 .line
   position absolute
   top 50vh
@@ -43,6 +42,13 @@ onBeforeUnmount(() => {
   height 50vh
   opacity 0.3
   background var(--text-color-purple)
+  &:after
+    content ''
+    position fixed
+    bottom 0
+    width 1px
+    height 50vh
+    background linear-gradient(to top,var(--bg) 3rem,rgba(14, 18, 18, 0) 70%)
 .circle
   position fixed
   top 48.9vh
@@ -55,6 +61,7 @@ onBeforeUnmount(() => {
   animation-name circle
   animation-duration 1s
   animation-delay .5s
+  z-index 1000
 .wave
   position fixed
   top 48.9vh
@@ -67,6 +74,7 @@ onBeforeUnmount(() => {
   animation-name wave
   animation-duration 2s
   animation-delay 1.5s
+  z-index 1000
 
 @media screen and (max-width: 1024px)
   .circle,

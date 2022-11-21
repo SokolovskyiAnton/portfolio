@@ -1,4 +1,5 @@
 <template>
+  <div class="pic" />
   <div class="static-container">
     <h1 class="title">about(<span class="func">sokolovskyi</span>)</h1>
 
@@ -140,6 +141,30 @@ const hobbies = ["Chess", "Football", "Guitar", "History"];
 </script>
 
 <style lang="stylus" scoped>
+.pic
+  pointer-events none
+  display block
+  position fixed
+  z-index 9999
+  top 50%
+  left -12vw
+  transform translate3d(0, -50%, 0)
+  width 43vw
+  aspect-ratio 1/1
+  border-radius 100%
+  //background-image url(../assets/me.jpg)
+  background-color wheat
+  background-repeat no-repeat
+  background-position center
+  background-size contain
+  filter grayscale(1) brightness(1)
+  mix-blend-mode difference
+
+  @media screen and (max-width 1024px)
+    top: -12vh
+    left: 50%
+    transform: translate3d(-50%, 0, 0) rotate(90deg)
+    width: 70vw
 .about-contact
   display flex
   align-items center
@@ -189,7 +214,7 @@ const hobbies = ["Chess", "Football", "Guitar", "History"];
   padding 3rem 2rem 0 0
   margin-right -25vw
   width 75vw
-//
+
   h2
     font-size 1.2rem
     margin-bottom 1rem
@@ -225,7 +250,7 @@ const hobbies = ["Chess", "Football", "Guitar", "History"];
     width calc(100vw - 4rem)
 
   @media screen and (max-width 768px)
-    ul
+    .about-list
       grid-template 1fr \/ repeat(3, 1fr)
 
     .tools
@@ -235,7 +260,7 @@ const hobbies = ["Chess", "Football", "Guitar", "History"];
         display block
 
   @media screen and (max-width 568px)
-    ul
+    .about-list
       grid-template 1fr \/ 1fr
       grid-gap 1rem
 
