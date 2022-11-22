@@ -225,7 +225,7 @@ const hobbies = ["Chess", "Football", "Guitar", "History"];
   .about-list
     display grid
     grid-template 1fr \/  repeat(4, 1fr)
-    grid-gap 2rem
+    grid-column-gap 2rem
     grid-row-gap 1rem
 
   .about-list__item
@@ -238,7 +238,7 @@ const hobbies = ["Chess", "Football", "Guitar", "History"];
   .tools
     display grid
     grid-template 1fr \/ repeat(4, 1fr)
-    grid-gap 2rem
+    grid-column-gap 2rem
     grid-row-gap 1rem
 
     ul
