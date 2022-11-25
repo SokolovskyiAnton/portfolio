@@ -9,7 +9,7 @@
   display flex
   flex-direction column
   justify-content flex-end
-  height 20vh
+  height 40vh
   font-size 0.8rem
   text-align center
   padding 1rem

@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-// TODO create wrapper for mario scene, position mario and coins, jumping mario
+// ToDo start to write login for game
 defineProps<{
   state: string;
 }>();
