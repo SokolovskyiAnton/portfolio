@@ -1,6 +1,6 @@
 <template>
-  <div class="line" ref="line" />
-  <div class="circle" />
+  <div class="line" id="line" ref="line" />
+  <div class="circle" id="circle" />
   <div class="wave" />
 </template>
 
