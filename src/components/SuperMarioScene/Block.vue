@@ -1,8 +1,9 @@
 <template>
-  <div ref="block">
+  <div>
     <div
       :class="['mario-box', { '-jumped': hasTouched }]"
       @click="onTouchBlock"
+      ref="block"
     >
       <div class="in"></div>
     </div>
