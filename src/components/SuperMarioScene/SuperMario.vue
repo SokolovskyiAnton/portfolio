@@ -3,9 +3,8 @@
 </template>
 
 <script lang="ts" setup>
-// ToDo start to write login for game
 defineProps<{
-  state: string;
+  state: string | null;
 }>();
 </script>
 
@@ -20,9 +19,6 @@ defineProps<{
 
   &.up
     background-position 0 -384px
-
-  &.down
-    background-position -128px -384px
 
   &.celebrate
     background-position -384px -384px

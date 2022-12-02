@@ -12,6 +12,13 @@
   animation: marioCoin 0.6s steps(4) infinite
   pointer-events: none
 
+  &.pause
+    animation-play-state: paused
+
+
+  .preview > &
+    margin: 10rem auto 3rem
+
 
   @keyframes marioCoin
     to

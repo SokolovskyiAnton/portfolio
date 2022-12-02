@@ -6,28 +6,87 @@
       ref="block"
     >
       <div class="in"></div>
+      <Coin id="coin" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import Coin from "@/components/SuperMarioScene/Coin.vue";
 import { ref } from "vue";
+import { useGsap } from "@/hooks/useGsap";
+import { random } from "@/helpers/random";
 
-const emits = defineEmits(["jumped"]);
+const emits = defineEmits(["jumped", "foundCoin", "foundAllCoins"]);
+const props = defineProps<{
+  hasCoin: boolean;
+  hasFindAllCoins: boolean;
+}>();
 
+const gsap = useGsap();
 const hasTouched = ref(false);
-const block = ref(null);
+const block = ref<HTMLElement | null>(null);
+const audioStomp = new Audio("/smw_stomp.ogg");
+const audioNoDamage = new Audio("/smw_stomp_no_damage.ogg");
+const audioAppears = new Audio("/smw_power-up_appears.ogg");
+
+function animateCoin() {
+  if (!block.value) {
+    return;
+  }
+
+  const xCoords = random(-150, 150);
+  const coin = block.value.children[1];
+  const coinAnimation = gsap.timeline();
+
+  coinAnimation
+    .set(coin, {
+      autoAlpha: 1,
+      xPercent: 0,
+      yPercent: 0,
+    })
+    .to(coin, 0.1, { yPercent: -100 })
+    .to(coin, 1, {
+      motionPath: [
+        { xPercent: xCoords, yPercent: random(-150, -100) },
+        { xPercent: xCoords * 2, yPercent: 800 },
+      ],
+      ease: "steps(24)",
+    });
+
+  audioAppears.play();
+  emits("foundCoin");
+}
 
 function onTouchBlock() {
   hasTouched.value = true;
   animateBlock();
-  setTimeout(() => {
-    hasTouched.value = false;
-  }, 700);
+
+  if (props.hasFindAllCoins) {
+    audioNoDamage.play();
+    return;
+  }
+
+  if (props.hasCoin) {
+    audioStomp.play();
+    animateCoin();
+  } else {
+    audioNoDamage.play();
+  }
 }
 
 function animateBlock() {
+  hasTouched.value = true;
+
   emits("jumped", block.value);
+
+  const blockAnimation = gsap.timeline();
+
+  blockAnimation
+    .clear(true)
+    .set(block.value, { yPercent: 0 })
+    .to(block.value, 0.07, { yPercent: -40, ease: "steps(2)" })
+    .to(block.value, 0.07, { yPercent: 0, ease: "steps(2)" });
 }
 </script>
 
@@ -38,26 +97,8 @@ function animateBlock() {
   width: 128px
   height: 128px
 
-  .preview>&
-    margin: 30rem auto 10rem
-
   &:hover
     filter: brightness(1.2)
-
-  &.-jumped
-    .in
-      animation: jumped 0.5s
-      animation-delay .2s
-
-  &.-full.-jumped .in
-    animation: none
-    background-position: -512px 0
-
-  &.-off
-    cursor: default
-
-    &:hover
-      filter: none
 
   .in
     position: relative
@@ -82,11 +123,4 @@ function animateBlock() {
 
   to
     background-position: -512px 0
-
-@keyframes jumped
-  from
-    transform: translateY(-20px);
-
-  to
-    transform: translateY(0px);
 </style>
