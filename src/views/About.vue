@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import AboutSection from "@/components/AboutSection.vue";
+import AboutSection from "@/components/AboutScene.vue";
 </script>
 
 <style lang="stylus">

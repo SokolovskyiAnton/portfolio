@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import Coin from "@/components/SuperMarioScene/Coin.vue";
+import Coin from "@/components/SuperMario/Coin.vue";
 import { ref } from "vue";
 import { useGsap } from "@/hooks/useGsap";
 import { random } from "@/helpers/random";
@@ -20,7 +20,7 @@ import { random } from "@/helpers/random";
 const emits = defineEmits(["jumped", "foundCoin", "foundAllCoins"]);
 const props = defineProps<{
   hasCoin: boolean;
-  hasFindAllCoins: boolean;
+  hasFoundAllCoins: boolean;
 }>();
 
 const gsap = useGsap();
@@ -62,7 +62,7 @@ function onTouchBlock() {
   hasTouched.value = true;
   animateBlock();
 
-  if (props.hasFindAllCoins) {
+  if (props.hasFoundAllCoins) {
     audioNoDamage.play();
     return;
   }

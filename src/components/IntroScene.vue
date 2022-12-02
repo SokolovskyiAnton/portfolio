@@ -14,5 +14,5 @@
 </template>
 
 <script lang="ts" setup>
-import TextBlock from "@/components/TextBlock";
+import TextBlock from "@/components/Common/TextBlock.vue";
 </script>

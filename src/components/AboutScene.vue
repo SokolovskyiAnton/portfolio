@@ -90,7 +90,7 @@
 </template>
 
 <script lang="ts" setup>
-import TextBlock from "@/components/TextBlock";
+import TextBlock from "@/components/Common/TextBlock.vue";
 import CVIcon from "@/components/Icons/CVIcon.vue";
 import { useLinks } from "@/hooks/useLinks";
 

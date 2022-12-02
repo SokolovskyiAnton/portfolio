@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import Line from "./components/Line.vue";
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
+import Line from "./components/Common/Line.vue";
+import Header from "./components/Common/Header.vue";
+import Footer from "./components/Common/Footer.vue";
 </script>
