@@ -6,7 +6,7 @@ Technology:
 
 - [Vue 3](https://vuejs.org/)
 - [Typescript](https://www.typescriptlang.org/)
-- [Jest](https://jestjs.io/ru/)
+- [GSAP](https://greensock.com/gsap/)
 
 ---
 
