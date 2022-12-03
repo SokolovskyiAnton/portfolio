@@ -152,8 +152,7 @@ const hobbies = ["Chess", "Football", "Guitar", "History"];
   width 43vw
   aspect-ratio 1/1
   border-radius 100%
-  //background-image url(../assets/me.jpg)
-  background-color wheat
+  background-color var(--bg-wheat)
   background-repeat no-repeat
   background-position center
   background-size contain
@@ -161,10 +160,10 @@ const hobbies = ["Chess", "Football", "Guitar", "History"];
   mix-blend-mode difference
 
   @media screen and (max-width 1024px)
-    top: -12vh
-    left: 50%
-    transform: translate3d(-50%, 0, 0) rotate(90deg)
-    width: 70vw
+    top -12vh
+    left 50%
+    transform translate3d(-50%, 0, 0) rotate(90deg)
+    width 70vw
 .about-contact
   display flex
   align-items center

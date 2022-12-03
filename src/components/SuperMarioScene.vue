@@ -241,10 +241,10 @@ onBeforeUnmount(() => {
     width 40rem
     height 30rem
     padding 2rem
-    max-width 70v
+    max-width 70vh
     max-height 70vh
-    background #000
-    color #fff
+    background var(--bg)
+    color var(--text-color-light)
     font-family 'SMW', monospace
     font-size 2rem
     text-align center
