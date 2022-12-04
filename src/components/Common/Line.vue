@@ -17,7 +17,6 @@ function onScroll() {
   // find out how much to add to the line height
   // so that the line increases when scrolling
   const y = Math.floor(window.scrollY / x);
-
   if (line.value) {
     line.value.style.height = lineBaseHeight + y + "vh";
   }

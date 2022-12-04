@@ -14,6 +14,5 @@
   text-align center
   padding 1rem
   position relative
-  z-index 999
   color var(--text-color-purple)
 </style>
