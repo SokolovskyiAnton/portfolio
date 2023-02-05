@@ -25,7 +25,7 @@
           </li>
         </ul>
         <p class="-purple">
-          Frontend engineer from Ukraine loving to build interfaces, writing
+          Frontend developer from Ukraine loving to build interfaces, writing
           good code and learning new technologies.
         </p>
         <p class="-gray">// Frontend developer @ Ficus technologies</p>
@@ -101,23 +101,37 @@ const skills = [
   [
     "JavaScript",
     "TypeScript",
+    "Vue 2",
+    "Vue 3",
+    "Nuxt",
+    "Vuex",
+    "Pinia",
+    "Quasar",
+    "Jest",
+    "React",
+    "Angular",
+    "Nest",
+    "MySQL",
+    "MongoDB",
+    "Docker",
+    "Git",
     "CSS",
     "HTML",
     "Canvas",
-    "Vue",
-    "React",
-    "Angular",
-    "Nuxt",
-    "MongoDB",
-    "Nest",
-    "Git",
-    "Docker",
+    "Bootstrap Vue",
+    "Vuetify",
+    "Material UI",
+    "Tailwind CSS",
+    "WebSockets",
+    "Stripe",
+    "Heroku",
+    "Firebase",
   ],
   ["Figma", "Basic photoshop"],
 ];
 const experiences = [
   {
-    position: "Frontend Engineer",
+    position: "Frontend developer",
     company: "Ficus technologies",
     time: "2021 - * current",
   },
