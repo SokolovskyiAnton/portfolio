@@ -108,7 +108,7 @@ const skills = [
     "Jest",
     "React",
     "Nest",
-    "MongoDB",
+    "MySQL",
     "Docker",
     "Git",
     "CSS",
@@ -125,7 +125,7 @@ const experiences = [
   {
     position: "Frontend developer",
     company: "Ficus technologies",
-    time: "2021 - * current",
+    time: "2021 - 2023",
   },
   {
     position: "Frontend developer",
