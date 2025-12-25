@@ -103,7 +103,6 @@ const skills = [
     "TypeScript",
     "Vue",
     "Nuxt",
-    "Vuex",
     "Pinia",
     "Jest",
     "React",
@@ -119,8 +118,13 @@ const skills = [
 const experiences = [
   {
     position: "Frontend developer",
+    company: "Relike",
+    time: "2024 - * current",
+  },
+  {
+    position: "Frontend developer",
     company: "Picout gmbh",
-    time: "2023 - * current",
+    time: "2023 - 2025",
   },
   {
     position: "Frontend developer",
