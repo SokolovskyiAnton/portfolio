@@ -28,7 +28,7 @@
           Frontend developer from Ukraine loving to build interfaces, writing
           good code and learning new technologies.
         </p>
-        <p class="-gray">// Frontend developer @ Ficus technologies</p>
+        <p class="-gray">// Frontend developer @ Relike</p>
       </div>
       <div class="about-grid">
         <h2>Main skills</h2>
